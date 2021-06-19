@@ -1,0 +1,96 @@
+* {
+  /*background-image: url("../img/pink_bg_2.jpg");*/
+
+  font-family: "GimpoBatang00";
+}
+
+body {
+  background-color: #f6e4f6;
+}
+
+@font-face {
+  font-family: "GimpoBatang00";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoBatang00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+#question,
+#share_area,
+#result {
+  display: none;
+}
+
+#result {
+  /*display: none;*/
+}
+
+#img {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.result_share {
+  margin: 0 auto;
+}
+
+.answer-group button {
+  width: 90%;
+  height: 80px;
+  color: rgb(61, 61, 61);
+}
+
+.start {
+  color: #343a40;
+  margin-top: 100px;
+}
+
+button {
+  background-color: #f6bdd1;
+  border: none;
+}
+
+.start button {
+  height: 80px;
+  font-size: 20px;
+}
+
+.font-point {
+  color: #fa83ac;
+}
+
+.explain-wrap {
+  border-radius: 40px;
+  border-color: #343a40;
+  border: solid 3px #343a40;
+  background-color: #fae8eb;
+  padding: 30px;
+}
+
+.explain-text {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.explain-title {
+  background-color: #fa83ac;
+  color: #fff;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.progress-bar {
+  background-color: #fa83ac;
+}
+
+.main-img {
+  width: 80%;
+  margin-right: 10px;
+}
