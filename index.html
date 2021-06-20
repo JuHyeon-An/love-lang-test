@@ -10,7 +10,7 @@
     <meta property="og:title" content="사랑의 언어 테스트">
     <meta property="og:description" content="30가지 질문을 통해 알아보는 사랑의 언어">
     <meta property="og:image" content="assets/img/love-lang-test.png">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="love-lang-test.netlify.app">
 
     <link
       rel="stylesheet"
@@ -43,7 +43,7 @@
           ></div>
         </div>
         <h2 id="title" class="text-center mt-5">Q1</h2>
-        <h5 class="text-center">자신의 성향에 더 맞는 항목을 선택하세요.</h3>
+        <h5 class="text-center">자신의 성향에 더 맞는 항목을 <br>선택하세요.</h3>
         <input id="type" type="hidden" value="EI" />
         <div class="answer-group text-center">
           <button id="Q1" type="button" class="mt-5"></button>
@@ -58,8 +58,11 @@
       </article>
 
       <article id="explain" class="text-center"></article>
+      <button type="button" class="mt-5 restart-btn" onclick="restart();">
+        다시하기
+      </button>
       <div id="share_area">
-        <h4 class="text-center mt-5" id="go_share">공유하고 해설보기 ⬇</h1>
+        <h4 class="text-center mt-5" id="go_share">공유하기🥰 ⬇</h1>
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="addthis_inline_share_toolbox result_share text-center mt-3"></div>
       </div>

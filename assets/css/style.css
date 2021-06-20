@@ -23,12 +23,9 @@ article {
 
 #question,
 #share_area,
-#result {
+#result,
+.restart-btn {
   display: none;
-}
-
-#result {
-  /*display: none;*/
 }
 
 #img {
@@ -57,9 +54,11 @@ button {
   border: none;
 }
 
-.start button {
+.start button,
+.restart-btn {
   height: 80px;
   font-size: 20px;
+  width: 100%;
 }
 
 .font-point {
@@ -75,14 +74,14 @@ button {
 }
 
 .explain-text {
-  font-size: 16px;
+  font-size: 15x;
   line-height: 28px;
 }
 
 .explain-title {
   background-color: #fa83ac;
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   padding: 5px;
 }
 

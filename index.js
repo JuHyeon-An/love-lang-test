@@ -27,7 +27,7 @@ var q = {
       type: "C",
     },
     Q2: {
-      answer: "나는 상대와 함께 산택하는 시간을 좋아한다.",
+      answer: "나는 상대와 함께 산책하는 시간을 좋아한다.",
       type: "B",
     },
   },
@@ -314,25 +314,6 @@ var q = {
   },
 };
 
-var result = {
-  INTJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  INTP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ENTJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ENTP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  INFJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  INFP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ENFJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ENFP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ISTJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ISFJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ESTJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ESFJ: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ISTP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ISFP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ESTP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-  ESFP: { name: "동물", explain: "설명", img: "icecream.jpg" },
-};
-
 var featureData = [
   {
     type: "A",
@@ -431,6 +412,10 @@ function start() {
   next();
 }
 
+function restart() {
+  location.reload();
+}
+
 $(".answer-group button").on("click", function () {
   var type = $(this).data("type");
   //var cnt = Number(featureData).val());
@@ -454,33 +439,33 @@ $("#B").click(function () {
   next();
 });
 
-$(".result_share").on("click", function () {
-  // 공유하기 버튼 누르면 해설 show
-  //$(".result").show();
-  $("#go_share").hide();
-
+function showResult() {
   let r_text = "";
   featureData.forEach((ele) => {
     ele.explain = ele.explain.join(" ");
-    r_text += `<div class='explain-wrap mt-3'><span class='explain-title mt-1'>${ele.title}</span>`;
+    r_text += `<div class='explain-wrap mt-3'><span class='explain-title mt-1'>${ele.title} (${ele.score}점) </span>`;
     r_text += `<div class='explain-text mt-2'>${ele.explain}</div></div>`;
   });
 
   $("#explain").html(r_text);
-});
+}
 
 function next() {
   addProgress();
 
   if (num == 31) {
+    // 마지막 문제가 끝났을 때 -> 결과
+
+    // 점수 내림차순 정렬
     featureData.sort(function (ele1, ele2) {
       return ele1.score < ele2.score ? 1 : ele1.score > ele2.score ? -1 : 0;
     });
 
-    console.log(featureData);
+    //console.log(featureData);
     $("#question").hide();
     $("#result").show();
     $("#share_area").show();
+    $(".restart-btn").show();
 
     let result_01 = [];
     let result_02 = [];
@@ -498,7 +483,6 @@ function next() {
     }
 
     featureData.forEach((element) => {
-      //element.title
       if (second_value == element.score) {
         result_02.push(element.title);
       }
@@ -506,6 +490,8 @@ function next() {
 
     $("#result_01").html(result_01.join(", "));
     $("#result_02").html(result_02.join(", "));
+
+    showResult();
   } else {
     // 각 부분에 자바스크립트 객체 요소를 넣는다
     $("#title").html(num + " / 30");
@@ -517,11 +503,7 @@ function next() {
     num++;
   }
 }
-function addProgress() {
-  //var proNum = (num/12)*100;
-  $(".progress-bar").attr("style", "width : calc(100/30*" + num + "%)");
-}
 
-function testSubmit() {
-  document.getElementById("test").submit();
+function addProgress() {
+  $(".progress-bar").attr("style", "width : calc(100/30*" + num + "%)");
 }
