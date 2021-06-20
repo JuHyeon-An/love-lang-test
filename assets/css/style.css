@@ -93,3 +93,7 @@ button {
   width: 80%;
   margin-right: 10px;
 }
+
+.share-kakao {
+  background-image: url("../img/kakaolink_btn_medium.png");
+}

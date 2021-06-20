@@ -1,3 +1,6 @@
+Kakao.init("a383315a540feaf82751b941dd058da6");
+console.log(Kakao.isInitialized());
+
 var num = 1;
 
 var q = {
@@ -507,3 +510,8 @@ function next() {
 function addProgress() {
   $(".progress-bar").attr("style", "width : calc(100/30*" + num + "%)");
 }
+
+Kakao.Link.createCustomButton({
+  container: "#kakao-link-btn",
+  templateId: 55537,
+});
