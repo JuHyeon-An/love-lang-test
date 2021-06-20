@@ -511,6 +511,18 @@ function addProgress() {
   $(".progress-bar").attr("style", "width : calc(100/30*" + num + "%)");
 }
 
+function copyUrl() {
+  var url = "";
+  var textarea = document.createElement("textarea");
+  document.body.appendChild(textarea);
+  url = window.document.location.href;
+  textarea.value = url;
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+  alert("url이 복사되었습니다.🤩");
+}
+
 Kakao.Link.createCustomButton({
   container: "#kakao-link-btn",
   templateId: 55537,
