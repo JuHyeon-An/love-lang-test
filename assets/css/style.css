@@ -97,3 +97,8 @@ button {
 .share-kakao {
   background-image: url("../img/kakaolink_btn_medium.png");
 }
+
+.facebook-share-btn {
+  width: 20px;
+  height: 20px;
+}

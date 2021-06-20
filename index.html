@@ -11,7 +11,7 @@
     <meta property="og:site_name" content="사랑의 언어 테스트">   
     <meta property="og:description" content="30가지 질문을 통해 알아보는 사랑의 언어">
     <meta property="og:image" content="assets/img/love-lang-test.png">
-    <meta property="og:url" content="love-lang-test.netlify.app">
+    <meta property="og:url" content="https://love-lang-test.netlify.app">
     
 
     <link
@@ -63,13 +63,18 @@
       <button type="button" class="mt-5 restart-btn" onclick="restart();">
         다시하기
       </button>
-      <div id="share_area">
+
+      <div id="share_area" class="text-center">
         <h4 class="text-center mt-5" id="go_share">공유하기🥰 ⬇</h1>
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <!--<div class="addthis_inline_share_toolbox result_share text-center mt-3"></div>-->
         <a id="kakao-link-btn" href="javascript:;">
-            <img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+            <img src="assets/img/kakaolink_btn_medium.png" width="10%" height="10%"/>
         </a>
+        <a id="facebook-link-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flove-lang-test.netlify.app%2F&amp;src=sdkpreparse">
+            <img src="assets/img/facebook.png" width="10%" height="10%"/>
+        </a>
+        
       </div>
       <ins class="kakao_ad_area mt-3" style="display:none;" 
             data-ad-unit    = "DAN-lm16FdRrjBclyFyf" 
@@ -78,6 +83,8 @@
             <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </form>
 
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v11.0&appId=490903828813366&autoLogAppEvents=1" nonce="DGAbte2j"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
